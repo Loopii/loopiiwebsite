@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Example - Template</title>
+    <link rel="stylesheet" href="/css/master.css">
+    <script src="js/three.js"></script>
+  </head>
+  <body>
+    <script>
+    // Make scene
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth * 0.6, window.innerHeight * 0.6);
+
+    // Appened where you want to have the image;
+    document.body.appendChild( renderer.domElement );
+
+    //Add objects to scene
+
+    //Cube Example
+    /*
+    var geometry = new THREE.BoxGeometry();
+    var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+    var cube = new THREE.Mesh( geometry, material );
+    scene.add(cube);*/
+
+    var loader = new THREE.ObjectLoader();
+
+    loader.load(
+    	"models/scene.json",
+    	function ( obj ) {
+    		scene.add(obj);
+    	},
+    	function ( xhr ) {
+    		console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+    	},
+    	function ( err ) {
+    		console.error( 'An error happened' );
+    	}
+    );
+
+    camera.position.z = 3;
+
+    var animate = function () {
+      requestAnimationFrame( animate );
+
+      //cube.rotation.x += 0.01;
+      //cube.rotation.y += 0.01;
+
+      renderer.render( scene, camera );
+    };
+
+    animate();
+  </script>
+  </body>
+</html>
