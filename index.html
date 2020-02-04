@@ -8,13 +8,15 @@
   <body>
     <script>
     // Make scene
+    var width = 2 * window.innerWidth * 0.2;
+    var height = 1 * window.innerWidth * 0.2;
     var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+    var camera = new THREE.PerspectiveCamera( 75, width/height, 0.1, 1000 );
     var renderer = new THREE.WebGLRenderer();
-    renderer.setSize( 1 * window.innerWidth * 0.6, 2 * window.innerWidth * 0.6);
+    renderer.setSize(width, height);
 
     // Appened where you want to have the image;
-    document.body.appendChild( renderer.domElement );
+    document.getElementById('model').appendChild( renderer.domElement );
 
     //Add objects to scene
 
@@ -53,5 +55,8 @@
 
     animate();
   </script>
+  <div class="center" id="model" style="display:block; margin: 0px auto;">
+
+  </div>
   </body>
 </html>
