@@ -39,6 +39,22 @@
   height: 90vh;
 }
 
+.h100{
+  height: 100vh;
+}
+
+p{
+  margin: 5px;
+}
+
+h1{
+  margin: 5px;
+}
+
+a{
+  margin: 5px;
+}
+
 .backW{
     background-color: #d1dbff;
 }
@@ -67,4 +83,10 @@
   display: block;
   float: left;
   margin-right: 16px;
+}
+
+@media only screen and (min-width: 600px) {
+  .content{
+    width: 90vw;
+  }
 }
