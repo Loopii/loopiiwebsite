@@ -7,8 +7,8 @@
 
 .content{
   display: block;
-  width: 60vw;
-  max-width: 900px;
+  width: 95vw;
+  max-width: 600px;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
@@ -83,10 +83,4 @@ a{
   display: block;
   float: left;
   margin-right: 16px;
-}
-
-@media only screen and (min-width: 600px) {
-  .content{
-    width: 90vw;
-  }
 }
