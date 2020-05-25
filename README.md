@@ -1,2 +1,2 @@
 # Portfolio
-https://loopii.github.io/Portfolio/
+https://loopii.dev
